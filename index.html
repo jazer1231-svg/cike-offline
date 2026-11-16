@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f7f3" />
+  <meta name="description" content="离线优先的个人英语词汇记忆工具。本地存储，不必注册。" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>词刻｜英语记忆</title>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">刻</span>
+        <div><div class="brand-name">词刻 <span class="brand-dot">·</span> 学位英语</div><div class="brand-subtitle">每天记一点，慢慢记得牢</div></div>
+      </div>
+      <div class="privacy-pill"><span class="status-dot"></span>本地保存</div>
+    </header>
+    <main id="main" aria-live="polite"><section class="card loading">正在读取本机词库…</section></main>
+  </div>
+  <nav class="bottom-nav" aria-label="应用功能导航">
+    <button data-nav="today" class="nav-item active" aria-label="今日学习"><span class="nav-icon">◫</span><span>今日</span></button>
+    <button data-nav="library" class="nav-item" aria-label="词库"><span class="nav-icon">⌕</span><span>词库</span></button>
+    <button data-nav="progress" class="nav-item" aria-label="学习统计"><span class="nav-icon">▥</span><span>进度</span></button>
+    <button data-nav="backup" class="nav-item" aria-label="设置与备份"><span class="nav-icon">▤</span><span>设置</span></button>
+  </nav>
+  <input type="file" id="import-file" accept=".json,.csv,application/json,text/csv" hidden />
+  <input type="file" id="restore-file" accept=".json,application/json" hidden />
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
